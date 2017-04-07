@@ -1,0 +1,2944 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/katiefenn/parker"
+
+    >parker (v0.0.10)</a>
+</h1>
+<h4>Stylesheet analysis tool for CSS</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker">module parker</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CliController">
+            function <span class="apidocSignatureSpan">parker.</span>CliController
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CliFormatter">
+            function <span class="apidocSignatureSpan">parker.</span>CliFormatter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssDeclaration">
+            function <span class="apidocSignatureSpan">parker.</span>CssDeclaration
+            <span class="apidocSignatureSpan">(raw)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssMediaQuery">
+            function <span class="apidocSignatureSpan">parker.</span>CssMediaQuery
+            <span class="apidocSignatureSpan">(raw)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssRule">
+            function <span class="apidocSignatureSpan">parker.</span>CssRule
+            <span class="apidocSignatureSpan">(raw)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssSelector">
+            function <span class="apidocSignatureSpan">parker.</span>CssSelector
+            <span class="apidocSignatureSpan">(raw)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssStylesheet">
+            function <span class="apidocSignatureSpan">parker.</span>CssStylesheet
+            <span class="apidocSignatureSpan">(raw)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>CliController.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>CliFormatter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>CssDeclaration.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>CssMediaQuery.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>CssRule.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>CssSelector.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>CssStylesheet.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>Formatters</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>IdentifiersPerSelector</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>Info</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>MediaQueries</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>SelectorsPerRule</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>SpecificityPerSelector</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>TopSelectorSpecificity</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>TopSelectorSpecificitySelector</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>TotalDeclarations</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>TotalIdSelectors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>TotalIdentifiers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>TotalImportantKeywords</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>TotalMediaQueries</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>TotalRules</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>TotalSelectors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>TotalStylesheetSize</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>TotalStylesheets</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>TotalUniqueColours</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>UniqueColours</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.CliController">module parker.CliController</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CliController.CliController">
+            function <span class="apidocSignatureSpan">parker.</span>CliController
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CliController.super_">
+            function <span class="apidocSignatureSpan">parker.CliController.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.CliController.prototype">module parker.CliController.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CliController.prototype.dispatch">
+            function <span class="apidocSignatureSpan">parker.CliController.prototype.</span>dispatch
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.CliFormatter">module parker.CliFormatter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CliFormatter.CliFormatter">
+            function <span class="apidocSignatureSpan">parker.</span>CliFormatter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.CliFormatter.prototype">module parker.CliFormatter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CliFormatter.prototype.format">
+            function <span class="apidocSignatureSpan">parker.CliFormatter.prototype.</span>format
+            <span class="apidocSignatureSpan">(data, metrics)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.CssDeclaration">module parker.CssDeclaration</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssDeclaration.CssDeclaration">
+            function <span class="apidocSignatureSpan">parker.</span>CssDeclaration
+            <span class="apidocSignatureSpan">(raw)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.CssDeclaration.prototype">module parker.CssDeclaration.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssDeclaration.prototype.getProperty">
+            function <span class="apidocSignatureSpan">parker.CssDeclaration.prototype.</span>getProperty
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssDeclaration.prototype.getValue">
+            function <span class="apidocSignatureSpan">parker.CssDeclaration.prototype.</span>getValue
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.CssMediaQuery">module parker.CssMediaQuery</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssMediaQuery.CssMediaQuery">
+            function <span class="apidocSignatureSpan">parker.</span>CssMediaQuery
+            <span class="apidocSignatureSpan">(raw)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.CssMediaQuery.prototype">module parker.CssMediaQuery.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssMediaQuery.prototype.getQueries">
+            function <span class="apidocSignatureSpan">parker.CssMediaQuery.prototype.</span>getQueries
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssMediaQuery.prototype.getRules">
+            function <span class="apidocSignatureSpan">parker.CssMediaQuery.prototype.</span>getRules
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.CssRule">module parker.CssRule</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssRule.CssRule">
+            function <span class="apidocSignatureSpan">parker.</span>CssRule
+            <span class="apidocSignatureSpan">(raw)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.CssRule.prototype">module parker.CssRule.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssRule.prototype.getDeclarations">
+            function <span class="apidocSignatureSpan">parker.CssRule.prototype.</span>getDeclarations
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssRule.prototype.getSelectors">
+            function <span class="apidocSignatureSpan">parker.CssRule.prototype.</span>getSelectors
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.CssSelector">module parker.CssSelector</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssSelector.CssSelector">
+            function <span class="apidocSignatureSpan">parker.</span>CssSelector
+            <span class="apidocSignatureSpan">(raw)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.CssSelector.prototype">module parker.CssSelector.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssSelector.prototype.addIdentifier">
+            function <span class="apidocSignatureSpan">parker.CssSelector.prototype.</span>addIdentifier
+            <span class="apidocSignatureSpan">(identifier)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssSelector.prototype.getIdentifiers">
+            function <span class="apidocSignatureSpan">parker.CssSelector.prototype.</span>getIdentifiers
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.CssStylesheet">module parker.CssStylesheet</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssStylesheet.CssStylesheet">
+            function <span class="apidocSignatureSpan">parker.</span>CssStylesheet
+            <span class="apidocSignatureSpan">(raw)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.CssStylesheet.prototype">module parker.CssStylesheet.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssStylesheet.prototype.getMalformedStatements">
+            function <span class="apidocSignatureSpan">parker.CssStylesheet.prototype.</span>getMalformedStatements
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssStylesheet.prototype.getMediaQueries">
+            function <span class="apidocSignatureSpan">parker.CssStylesheet.prototype.</span>getMediaQueries
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.CssStylesheet.prototype.getRules">
+            function <span class="apidocSignatureSpan">parker.CssStylesheet.prototype.</span>getRules
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.Formatters">module parker.Formatters</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.Formatters.csv">
+            function <span class="apidocSignatureSpan">parker.Formatters.</span>csv
+            <span class="apidocSignatureSpan">(metrics, results)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.Formatters.human">
+            function <span class="apidocSignatureSpan">parker.Formatters.</span>human
+            <span class="apidocSignatureSpan">(metrics, results)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.Formatters.json">
+            function <span class="apidocSignatureSpan">parker.Formatters.</span>json
+            <span class="apidocSignatureSpan">(metrics, results)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.IdentifiersPerSelector">module parker.IdentifiersPerSelector</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.IdentifiersPerSelector.measure">
+            function <span class="apidocSignatureSpan">parker.IdentifiersPerSelector.</span>measure
+            <span class="apidocSignatureSpan">(selector)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.IdentifiersPerSelector.</span>aggregate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.IdentifiersPerSelector.</span>format</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.IdentifiersPerSelector.</span>id</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.IdentifiersPerSelector.</span>name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.IdentifiersPerSelector.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.Info">module parker.Info</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.Info.help">
+            function <span class="apidocSignatureSpan">parker.Info.</span>help
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.Info.version">
+            function <span class="apidocSignatureSpan">parker.Info.</span>version
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.MediaQueries">module parker.MediaQueries</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.MediaQueries.filter">
+            function <span class="apidocSignatureSpan">parker.MediaQueries.</span>filter
+            <span class="apidocSignatureSpan">(value, index, self)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.MediaQueries.measure">
+            function <span class="apidocSignatureSpan">parker.MediaQueries.</span>measure
+            <span class="apidocSignatureSpan">(query)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.MediaQueries.</span>aggregate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.MediaQueries.</span>format</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.MediaQueries.</span>id</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.MediaQueries.</span>name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.MediaQueries.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.SelectorsPerRule">module parker.SelectorsPerRule</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.SelectorsPerRule.measure">
+            function <span class="apidocSignatureSpan">parker.SelectorsPerRule.</span>measure
+            <span class="apidocSignatureSpan">(rule)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.SelectorsPerRule.</span>aggregate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.SelectorsPerRule.</span>format</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.SelectorsPerRule.</span>id</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.SelectorsPerRule.</span>name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.SelectorsPerRule.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.SpecificityPerSelector">module parker.SpecificityPerSelector</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.SpecificityPerSelector.measure">
+            function <span class="apidocSignatureSpan">parker.SpecificityPerSelector.</span>measure
+            <span class="apidocSignatureSpan">(rawSelector)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.SpecificityPerSelector.</span>aggregate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.SpecificityPerSelector.</span>format</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.SpecificityPerSelector.</span>id</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.SpecificityPerSelector.</span>name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.SpecificityPerSelector.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.TopSelectorSpecificity">module parker.TopSelectorSpecificity</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.TopSelectorSpecificity.measure">
+            function <span class="apidocSignatureSpan">parker.TopSelectorSpecificity.</span>measure
+            <span class="apidocSignatureSpan">(rawSelector)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TopSelectorSpecificity.</span>aggregate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TopSelectorSpecificity.</span>format</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TopSelectorSpecificity.</span>id</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TopSelectorSpecificity.</span>name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TopSelectorSpecificity.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.TopSelectorSpecificitySelector">module parker.TopSelectorSpecificitySelector</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.TopSelectorSpecificitySelector.iterator">
+            function <span class="apidocSignatureSpan">parker.TopSelectorSpecificitySelector.</span>iterator
+            <span class="apidocSignatureSpan">(rawSelector)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.TopSelectorSpecificitySelector.measure">
+            function <span class="apidocSignatureSpan">parker.TopSelectorSpecificitySelector.</span>measure
+            <span class="apidocSignatureSpan">(selector)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TopSelectorSpecificitySelector.</span>aggregate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TopSelectorSpecificitySelector.</span>format</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TopSelectorSpecificitySelector.</span>id</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TopSelectorSpecificitySelector.</span>name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TopSelectorSpecificitySelector.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.TotalDeclarations">module parker.TotalDeclarations</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.TotalDeclarations.measure">
+            function <span class="apidocSignatureSpan">parker.TotalDeclarations.</span>measure
+            <span class="apidocSignatureSpan">(declaration)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalDeclarations.</span>aggregate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalDeclarations.</span>format</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalDeclarations.</span>id</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalDeclarations.</span>name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalDeclarations.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.TotalIdSelectors">module parker.TotalIdSelectors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.TotalIdSelectors.measure">
+            function <span class="apidocSignatureSpan">parker.TotalIdSelectors.</span>measure
+            <span class="apidocSignatureSpan">(selector)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalIdSelectors.</span>aggregate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalIdSelectors.</span>format</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalIdSelectors.</span>id</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalIdSelectors.</span>name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalIdSelectors.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.TotalIdentifiers">module parker.TotalIdentifiers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.TotalIdentifiers.measure">
+            function <span class="apidocSignatureSpan">parker.TotalIdentifiers.</span>measure
+            <span class="apidocSignatureSpan">(identifier)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalIdentifiers.</span>aggregate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalIdentifiers.</span>format</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalIdentifiers.</span>id</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalIdentifiers.</span>name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalIdentifiers.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.TotalImportantKeywords">module parker.TotalImportantKeywords</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.TotalImportantKeywords.measure">
+            function <span class="apidocSignatureSpan">parker.TotalImportantKeywords.</span>measure
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalImportantKeywords.</span>aggregate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalImportantKeywords.</span>format</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalImportantKeywords.</span>id</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalImportantKeywords.</span>name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalImportantKeywords.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.TotalMediaQueries">module parker.TotalMediaQueries</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.TotalMediaQueries.filter">
+            function <span class="apidocSignatureSpan">parker.TotalMediaQueries.</span>filter
+            <span class="apidocSignatureSpan">(value, index, self)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.TotalMediaQueries.measure">
+            function <span class="apidocSignatureSpan">parker.TotalMediaQueries.</span>measure
+            <span class="apidocSignatureSpan">(query)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalMediaQueries.</span>aggregate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalMediaQueries.</span>format</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalMediaQueries.</span>id</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalMediaQueries.</span>name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalMediaQueries.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.TotalRules">module parker.TotalRules</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.TotalRules.measure">
+            function <span class="apidocSignatureSpan">parker.TotalRules.</span>measure
+            <span class="apidocSignatureSpan">(rule)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalRules.</span>aggregate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalRules.</span>format</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalRules.</span>id</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalRules.</span>name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalRules.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.TotalSelectors">module parker.TotalSelectors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.TotalSelectors.measure">
+            function <span class="apidocSignatureSpan">parker.TotalSelectors.</span>measure
+            <span class="apidocSignatureSpan">(selector)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalSelectors.</span>aggregate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalSelectors.</span>format</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalSelectors.</span>id</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalSelectors.</span>name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalSelectors.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.TotalStylesheetSize">module parker.TotalStylesheetSize</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.TotalStylesheetSize.measure">
+            function <span class="apidocSignatureSpan">parker.TotalStylesheetSize.</span>measure
+            <span class="apidocSignatureSpan">(stylesheet)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalStylesheetSize.</span>aggregate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalStylesheetSize.</span>format</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalStylesheetSize.</span>id</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalStylesheetSize.</span>name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalStylesheetSize.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.TotalStylesheets">module parker.TotalStylesheets</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.TotalStylesheets.measure">
+            function <span class="apidocSignatureSpan">parker.TotalStylesheets.</span>measure
+            <span class="apidocSignatureSpan">(stylesheet)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalStylesheets.</span>aggregate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalStylesheets.</span>format</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalStylesheets.</span>id</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalStylesheets.</span>name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalStylesheets.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.TotalUniqueColours">module parker.TotalUniqueColours</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.TotalUniqueColours.filter">
+            function <span class="apidocSignatureSpan">parker.TotalUniqueColours.</span>filter
+            <span class="apidocSignatureSpan">(value, index, self)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.TotalUniqueColours.measure">
+            function <span class="apidocSignatureSpan">parker.TotalUniqueColours.</span>measure
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalUniqueColours.</span>aggregate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalUniqueColours.</span>format</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalUniqueColours.</span>id</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalUniqueColours.</span>name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.TotalUniqueColours.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.UniqueColours">module parker.UniqueColours</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.UniqueColours.filter">
+            function <span class="apidocSignatureSpan">parker.UniqueColours.</span>filter
+            <span class="apidocSignatureSpan">(value, index, self)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.UniqueColours.measure">
+            function <span class="apidocSignatureSpan">parker.UniqueColours.</span>measure
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.UniqueColours.</span>aggregate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.UniqueColours.</span>format</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.UniqueColours.</span>id</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.UniqueColours.</span>name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.UniqueColours.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker" id="apidoc.module.parker">module parker</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CliController" id="apidoc.element.parker.CliController">
+        function <span class="apidocSignatureSpan">parker.</span>CliController
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CliController() {
+    events.EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CliFormatter" id="apidoc.element.parker.CliFormatter">
+        function <span class="apidocSignatureSpan">parker.</span>CliFormatter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CliFormatter() {
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssDeclaration" id="apidoc.element.parker.CssDeclaration">
+        function <span class="apidocSignatureSpan">parker.</span>CssDeclaration
+        <span class="apidocSignatureSpan">(raw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CssDeclaration(raw) {
+
+    this.raw = raw;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssMediaQuery" id="apidoc.element.parker.CssMediaQuery">
+        function <span class="apidocSignatureSpan">parker.</span>CssMediaQuery
+        <span class="apidocSignatureSpan">(raw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CssMediaQuery(raw) {
+	this.raw = raw;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssRule" id="apidoc.element.parker.CssRule">
+        function <span class="apidocSignatureSpan">parker.</span>CssRule
+        <span class="apidocSignatureSpan">(raw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CssRule(raw) {
+    this.raw = raw;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssSelector" id="apidoc.element.parker.CssSelector">
+        function <span class="apidocSignatureSpan">parker.</span>CssSelector
+        <span class="apidocSignatureSpan">(raw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CssSelector(raw) {
+    this.raw = raw;
+    this.identifiers = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssStylesheet" id="apidoc.element.parker.CssStylesheet">
+        function <span class="apidocSignatureSpan">parker.</span>CssStylesheet
+        <span class="apidocSignatureSpan">(raw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CssStylesheet(raw) {
+    this.raw = raw;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.CliController" id="apidoc.module.parker.CliController">module parker.CliController</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CliController.CliController" id="apidoc.element.parker.CliController.CliController">
+        function <span class="apidocSignatureSpan">parker.</span>CliController
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CliController() {
+    events.EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CliController.super_" id="apidoc.element.parker.CliController.super_">
+        function <span class="apidocSignatureSpan">parker.CliController.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.CliController.prototype" id="apidoc.module.parker.CliController.prototype">module parker.CliController.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CliController.prototype.dispatch" id="apidoc.element.parker.CliController.prototype.dispatch">
+        function <span class="apidocSignatureSpan">parker.CliController.prototype.</span>dispatch
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dispatch = function (argv) {
+    if (argv.v || argv.version) {
+        this.emit(&#x27;showVersion&#x27;);
+    }
+    if (argv.h || argv.help) {
+        this.emit(&#x27;showHelp&#x27;);
+    }
+    if (argv.f || argv.format) {
+        var format = argv.f || argv.format;
+        this.emit(&#x27;setFormat&#x27;, format);
+    }
+    if (argv.n || argv.numeric) {
+        this.emit(&#x27;showNumericOnly&#x27;);
+    }
+    if (argv._ &#x26;&#x26; argv._.length) {
+        this.emit(&#x27;runPaths&#x27;, argv._);
+    }
+    else if (argv.s || argv.stdin) {
+        this.emit(&#x27;runStdin&#x27;);
+    }
+    else {
+        // No data supplied - show help
+        this.emit(&#x27;showHelp&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+if (module.parent) {
+    module.exports = Parker;
+} else {
+    var parker = new Parker(metrics),
+    formatter = formatters[&#x27;human&#x27;];
+    cliController.<span class="apidocCodeKeywordSpan">dispatch</span>(argv);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.CliFormatter" id="apidoc.module.parker.CliFormatter">module parker.CliFormatter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CliFormatter.CliFormatter" id="apidoc.element.parker.CliFormatter.CliFormatter">
+        function <span class="apidocSignatureSpan">parker.</span>CliFormatter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CliFormatter() {
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.CliFormatter.prototype" id="apidoc.module.parker.CliFormatter.prototype">module parker.CliFormatter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CliFormatter.prototype.format" id="apidoc.element.parker.CliFormatter.prototype.format">
+        function <span class="apidocSignatureSpan">parker.CliFormatter.prototype.</span>format
+        <span class="apidocSignatureSpan">(data, metrics)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">format = function (data, metrics) {
+	var output = &#x27;&#x27;;
+    _.each(metrics, function(metric) {
+        output += metric.name + &#x22;: &#x22; + data[metric.id];
+        output += &#x22;\n&#x22;;
+    });
+
+	return output;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.CssDeclaration" id="apidoc.module.parker.CssDeclaration">module parker.CssDeclaration</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssDeclaration.CssDeclaration" id="apidoc.element.parker.CssDeclaration.CssDeclaration">
+        function <span class="apidocSignatureSpan">parker.</span>CssDeclaration
+        <span class="apidocSignatureSpan">(raw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CssDeclaration(raw) {
+
+    this.raw = raw;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.CssDeclaration.prototype" id="apidoc.module.parker.CssDeclaration.prototype">module parker.CssDeclaration.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssDeclaration.prototype.getProperty" id="apidoc.element.parker.CssDeclaration.prototype.getProperty">
+        function <span class="apidocSignatureSpan">parker.CssDeclaration.prototype.</span>getProperty
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getProperty = function () {
+    if (this.raw.indexOf(&#x27;:&#x27;) === -1) {
+        return &#x27;&#x27;;
+    }
+
+    return this.raw.split(&#x27;:&#x27;)[0].trim();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssDeclaration.prototype.getValue" id="apidoc.element.parker.CssDeclaration.prototype.getValue">
+        function <span class="apidocSignatureSpan">parker.CssDeclaration.prototype.</span>getValue
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getValue = function () {
+    if (this.raw.indexOf(&#x27;:&#x27;) === -1) {
+        return &#x27;&#x27;;
+    }
+
+    return this.raw.split(&#x27;:&#x27;)[1].trim();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.CssMediaQuery" id="apidoc.module.parker.CssMediaQuery">module parker.CssMediaQuery</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssMediaQuery.CssMediaQuery" id="apidoc.element.parker.CssMediaQuery.CssMediaQuery">
+        function <span class="apidocSignatureSpan">parker.</span>CssMediaQuery
+        <span class="apidocSignatureSpan">(raw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CssMediaQuery(raw) {
+	this.raw = raw;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.CssMediaQuery.prototype" id="apidoc.module.parker.CssMediaQuery.prototype">module parker.CssMediaQuery.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssMediaQuery.prototype.getQueries" id="apidoc.element.parker.CssMediaQuery.prototype.getQueries">
+        function <span class="apidocSignatureSpan">parker.CssMediaQuery.prototype.</span>getQueries
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getQueries = function () {
+	var pattern = /@media\w*(.+?)\s?{/,
+		queries = pattern.exec(this.raw)[1];
+
+	return queries.split(/ or |,/g).map(trimQuery);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssMediaQuery.prototype.getRules" id="apidoc.element.parker.CssMediaQuery.prototype.getRules">
+        function <span class="apidocSignatureSpan">parker.CssMediaQuery.prototype.</span>getRules
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRules = function () {
+    var rules = [],
+        depth = 0,
+        rule = &#x27;&#x27;;
+
+    for (var index = 0; index &#x3c; this.raw.length; index++) {
+    	if (depth &#x3e; 0) {
+	        rule += this.raw.charAt(index);
+	    }
+        if (this.raw.charAt(index) === &#x27;{&#x27;) {
+            depth ++;
+        }
+        else if (this.raw.charAt(index) == &#x27;}&#x27;) {
+            depth --;
+        }
+
+        if (depth === 1 &#x26;&#x26; this.raw.charAt(index) == &#x27;}&#x27;) {
+            rules.push(rule.trim());
+            rule = &#x27;&#x27;;
+        }
+    }
+    return rules;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.CssRule" id="apidoc.module.parker.CssRule">module parker.CssRule</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssRule.CssRule" id="apidoc.element.parker.CssRule.CssRule">
+        function <span class="apidocSignatureSpan">parker.</span>CssRule
+        <span class="apidocSignatureSpan">(raw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CssRule(raw) {
+    this.raw = raw;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.CssRule.prototype" id="apidoc.module.parker.CssRule.prototype">module parker.CssRule.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssRule.prototype.getDeclarations" id="apidoc.element.parker.CssRule.prototype.getDeclarations">
+        function <span class="apidocSignatureSpan">parker.CssRule.prototype.</span>getDeclarations
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDeclarations = function () {
+    return getDeclarations(getDeclarationBlock(this.raw));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssRule.prototype.getSelectors" id="apidoc.element.parker.CssRule.prototype.getSelectors">
+        function <span class="apidocSignatureSpan">parker.CssRule.prototype.</span>getSelectors
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSelectors = function () {
+    return getSelectors(getSelectorBlock(this.raw));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.CssSelector" id="apidoc.module.parker.CssSelector">module parker.CssSelector</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssSelector.CssSelector" id="apidoc.element.parker.CssSelector.CssSelector">
+        function <span class="apidocSignatureSpan">parker.</span>CssSelector
+        <span class="apidocSignatureSpan">(raw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CssSelector(raw) {
+    this.raw = raw;
+    this.identifiers = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.CssSelector.prototype" id="apidoc.module.parker.CssSelector.prototype">module parker.CssSelector.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssSelector.prototype.addIdentifier" id="apidoc.element.parker.CssSelector.prototype.addIdentifier">
+        function <span class="apidocSignatureSpan">parker.CssSelector.prototype.</span>addIdentifier
+        <span class="apidocSignatureSpan">(identifier)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addIdentifier = function (identifier) {
+    this.identifiers.push(identifier);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+parenDepth = 0;
+
+    _.each(this.raw, function (character, index) {
+var insideBrackets = bracketDepth || parenDepth,
+    isSecondColon = character == &#x27;:&#x27; &#x26;&#x26; this.raw[index - 1] == &#x27;:&#x27;;
+
+if (!insideBrackets &#x26;&#x26; isDelimiter(character) &#x26;&#x26; !isSecondColon) {
+    this.<span class="apidocCodeKeywordSpan">addIdentifier</span>(identifier);
+    identifier = &#x27;&#x27;;
+}
+
+switch(character) {
+    case &#x27;(&#x27;: parenDepth++; break;
+    case &#x27;)&#x27;: parenDepth--; break;
+    case &#x27;[&#x27;: bracketDepth++; break;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssSelector.prototype.getIdentifiers" id="apidoc.element.parker.CssSelector.prototype.getIdentifiers">
+        function <span class="apidocSignatureSpan">parker.CssSelector.prototype.</span>getIdentifiers
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getIdentifiers = function () {
+    var identifier = &#x27;&#x27;,
+        bracketDepth = 0,
+        parenDepth = 0;
+
+    _.each(this.raw, function (character, index) {
+        var insideBrackets = bracketDepth || parenDepth,
+            isSecondColon = character == &#x27;:&#x27; &#x26;&#x26; this.raw[index - 1] == &#x27;:&#x27;;
+
+        if (!insideBrackets &#x26;&#x26; isDelimiter(character) &#x26;&#x26; !isSecondColon) {
+            this.addIdentifier(identifier);
+            identifier = &#x27;&#x27;;
+        }
+
+        switch(character) {
+            case &#x27;(&#x27;: parenDepth++; break;
+            case &#x27;)&#x27;: parenDepth--; break;
+            case &#x27;[&#x27;: bracketDepth++; break;
+            case &#x27;]&#x27;: bracketDepth--; break;
+        }
+
+        if (!_.contains([&#x27; &#x27;, &#x27;&#x3e;&#x27;], character)) {
+            identifier += character;
+        }
+    }, this);
+
+    this.addIdentifier(identifier);
+    return _.without(this.identifiers, &#x27; &#x27;, &#x27;&#x27;, &#x27;[]&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    type: &#x27;selector&#x27;,
+    aggregate: &#x27;mean&#x27;,
+    format: &#x27;number&#x27;,
+    measure: function (rawSelector) {
+var totalSpecificity = 0,
+    selector = new CssSelector(rawSelector);
+
+_.each(selector.<span class="apidocCodeKeywordSpan">getIdentifiers</span>(), function (identifier) {
+    var idIdentifiers = countIdIdentifiers(identifier),
+        classIdentifiers = countClassIdentifiers(identifier),
+        attributeIdentifiers = countAttributeIdentifiers(identifier),
+        pseudoClassIdentifiers = countPseudoClassIdentifiers(identifier),
+        typeIdentifiers = countTypeIdentifiers(identifier),
+        pseudoElementIdentifiers = countPseudoElementIdentifiers(identifier);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.CssStylesheet" id="apidoc.module.parker.CssStylesheet">module parker.CssStylesheet</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssStylesheet.CssStylesheet" id="apidoc.element.parker.CssStylesheet.CssStylesheet">
+        function <span class="apidocSignatureSpan">parker.</span>CssStylesheet
+        <span class="apidocSignatureSpan">(raw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CssStylesheet(raw) {
+    this.raw = raw;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.CssStylesheet.prototype" id="apidoc.module.parker.CssStylesheet.prototype">module parker.CssStylesheet.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssStylesheet.prototype.getMalformedStatements" id="apidoc.element.parker.CssStylesheet.prototype.getMalformedStatements">
+        function <span class="apidocSignatureSpan">parker.CssStylesheet.prototype.</span>getMalformedStatements
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMalformedStatements = function () {
+    this.children = this.children || getChildren(this.raw);
+
+    return this.children.filter(function (child) {
+        return isMalformedStatement(child);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssStylesheet.prototype.getMediaQueries" id="apidoc.element.parker.CssStylesheet.prototype.getMediaQueries">
+        function <span class="apidocSignatureSpan">parker.CssStylesheet.prototype.</span>getMediaQueries
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMediaQueries = function () {
+    this.children = this.children || getChildren(this.raw);
+    return this.children.filter(function (child) {
+        return isMediaQuery(child);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.CssStylesheet.prototype.getRules" id="apidoc.element.parker.CssStylesheet.prototype.getRules">
+        function <span class="apidocSignatureSpan">parker.CssStylesheet.prototype.</span>getRules
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRules = function () {
+    this.children = this.children || getChildren(this.raw);
+
+    return this.children.filter(function (child) {
+        return isRule(child);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.Formatters" id="apidoc.module.parker.Formatters">module parker.Formatters</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.Formatters.csv" id="apidoc.element.parker.Formatters.csv">
+        function <span class="apidocSignatureSpan">parker.Formatters.</span>csv
+        <span class="apidocSignatureSpan">(metrics, results)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">csv = function (metrics, results) {
+    var lineItems = [];
+    _.each(metrics, function (metric) {
+        lineItems.push(&#x27;&#x22;&#x27; + results[metric.id] + &#x27;&#x22;&#x27;);
+    });
+
+    return lineItems.join(&#x27;,&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.Formatters.human" id="apidoc.element.parker.Formatters.human">
+        function <span class="apidocSignatureSpan">parker.Formatters.</span>human
+        <span class="apidocSignatureSpan">(metrics, results)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">human = function (metrics, results) {
+    var logo = clc.red(&#x27;PA&#x27;) + clc.yellow(&#x27;RK&#x27;) + clc.green(&#x27;ER&#x27;) + &#x27;-JS&#x27; + &#x22;\n&#x22;;
+    return logo + _.reduce(metrics, function (str, metric) {
+        return str + metric.name + &#x27;: &#x27; + results[metric.id] + &#x27;\n&#x27;;
+    }, &#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.Formatters.json" id="apidoc.element.parker.Formatters.json">
+        function <span class="apidocSignatureSpan">parker.Formatters.</span>json
+        <span class="apidocSignatureSpan">(metrics, results)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">json = function (metrics, results) {
+    var ids = _.map(metrics, function (metric) {
+        return metric.id;
+    });
+    var obj = _.reduce(ids, function (obj, id) {
+        obj[id] = results[id];
+        return obj;
+    }, {});
+    return JSON.stringify(obj, null, 4);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.IdentifiersPerSelector" id="apidoc.module.parker.IdentifiersPerSelector">module parker.IdentifiersPerSelector</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.IdentifiersPerSelector.measure" id="apidoc.element.parker.IdentifiersPerSelector.measure">
+        function <span class="apidocSignatureSpan">parker.IdentifiersPerSelector.</span>measure
+        <span class="apidocSignatureSpan">(selector)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">measure = function (selector) {
+    var identifiers = getIdentifiers(selector);
+
+    if (identifiers.length === 1 &#x26;&#x26; identifiers[0] === &#x27;&#x27;) {
+        return 0;
+    }
+
+    return identifiers.length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.Info" id="apidoc.module.parker.Info">module parker.Info</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.Info.help" id="apidoc.element.parker.Info.help">
+        function <span class="apidocSignatureSpan">parker.Info.</span>help
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">help = function () {
+    module.exports.version();
+
+    [
+        pkg.description,
+        &#x27;&#x27;,
+        &#x27;Usage:&#x27;,
+        &#x27;parker [arguments] [file...] Run Parker on specified files&#x27;,
+        &#x27;&#x27;,
+        &#x27;Example Local Usage:&#x27;,
+        &#x27;parker styles.css&#x27;,
+        &#x27;&#x27;,
+        &#x27;Example Stdin Usage:&#x27;,
+        &#x27;curl http://www.katiefenn.co.uk/css/shuttle.css -s | parker -s&#x27;,
+        &#x27;&#x27;,
+        &#x27;Arguments:&#x27;,
+        &#x27;&#x27;,
+        &#x27;-f                  Set output format (see list of formats)&#x27;,
+        &#x27;-h                  Shows help&#x27;,
+        &#x27;-n                  Show numeric results only&#x27;,
+        &#x27;-s                  Input CSS using stdin&#x27;,
+        &#x27;-v                  Show version number of Parker&#x27;,
+        &#x27;&#x27;,
+        &#x27;Formats Usage:&#x27;,
+        &#x27;parker -f &#x22;human&#x22;&#x27;,
+        &#x27;&#x27;,
+        &#x27;Formats List:&#x27;,
+        &#x27;human               Human-readable, newline separated format (default)&#x27;,
+        &#x27;json                JSON&#x27;,
+        &#x27;csv                 CSV&#x27;,
+        &#x27;&#x27;,
+        &#x27;For more information, see &#x27; + pkg.homepage
+    ].forEach(function(str) { console.log(str); });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+cliController.on(&#x27;showVersion&#x27;, function () {
+info.version();
+process.exit();
+});
+
+cliController.on(&#x27;showHelp&#x27;, function () {
+info.<span class="apidocCodeKeywordSpan">help</span>();
+process.exit();
+});
+
+cliController.on(&#x27;setFormat&#x27;, function (format) {
+formatter = formatters[format];
+
+if (!formatter) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.Info.version" id="apidoc.element.parker.Info.version">
+        function <span class="apidocSignatureSpan">parker.Info.</span>version
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">version = function () {
+    console.log(pkg.name + &#x27; v&#x27; + pkg.version);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    process.stdin.on(&#x27;end&#x27;, function() {
+        runReport(stdinData, metrics);
+    });
+});
+
+cliController.on(&#x27;showVersion&#x27;, function () {
+    info.<span class="apidocCodeKeywordSpan">version</span>();
+    process.exit();
+});
+
+cliController.on(&#x27;showHelp&#x27;, function () {
+    info.help();
+    process.exit();
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.MediaQueries" id="apidoc.module.parker.MediaQueries">module parker.MediaQueries</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.MediaQueries.filter" id="apidoc.element.parker.MediaQueries.filter">
+        function <span class="apidocSignatureSpan">parker.MediaQueries.</span>filter
+        <span class="apidocSignatureSpan">(value, index, self)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filter = function (value, index, self) {
+    return self.indexOf(value) === index;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    console.error(&#x27;Unknown output format: %s&#x27;, argv.format);
+    console.error(&#x27;  available: &#x27; + Object.keys(formatters).join(&#x27; &#x27;));
+    process.exit(1);
+}
+});
+
+cliController.on(&#x27;showNumericOnly&#x27;, function () {
+metrics = _.<span class="apidocCodeKeywordSpan">filter</span>(metrics, function (metric) {
+    return metric.format == &#x27;number&#x27;;
+});
+});
+
+var readDirectory = function (directoryPath, onFileLoad, onAllLoad) {
+fs.readdir(directoryPath, function (err, files) {
+    async.each(files, function (file, fileDone) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.MediaQueries.measure" id="apidoc.element.parker.MediaQueries.measure">
+        function <span class="apidocSignatureSpan">parker.MediaQueries.</span>measure
+        <span class="apidocSignatureSpan">(query)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">measure = function (query) {
+    return query;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.SelectorsPerRule" id="apidoc.module.parker.SelectorsPerRule">module parker.SelectorsPerRule</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.SelectorsPerRule.measure" id="apidoc.element.parker.SelectorsPerRule.measure">
+        function <span class="apidocSignatureSpan">parker.SelectorsPerRule.</span>measure
+        <span class="apidocSignatureSpan">(rule)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">measure = function (rule) {
+    return getSelectors(getSelectorBlock(rule)).length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.SpecificityPerSelector" id="apidoc.module.parker.SpecificityPerSelector">module parker.SpecificityPerSelector</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.SpecificityPerSelector.measure" id="apidoc.element.parker.SpecificityPerSelector.measure">
+        function <span class="apidocSignatureSpan">parker.SpecificityPerSelector.</span>measure
+        <span class="apidocSignatureSpan">(rawSelector)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">measure = function (rawSelector) {
+    var totalSpecificity = 0,
+        selector = new CssSelector(rawSelector);
+
+    _.each(selector.getIdentifiers(), function (identifier) {
+        var idIdentifiers = countIdIdentifiers(identifier),
+            classIdentifiers = countClassIdentifiers(identifier),
+            attributeIdentifiers = countAttributeIdentifiers(identifier),
+            pseudoClassIdentifiers = countPseudoClassIdentifiers(identifier),
+            typeIdentifiers = countTypeIdentifiers(identifier),
+            pseudoElementIdentifiers = countPseudoElementIdentifiers(identifier);
+
+        totalSpecificity += Number(
+            String(idIdentifiers) +
+            String(classIdentifiers + attributeIdentifiers + pseudoClassIdentifiers) +
+            String(typeIdentifiers + pseudoElementIdentifiers));
+    });
+
+    return totalSpecificity;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.TopSelectorSpecificity" id="apidoc.module.parker.TopSelectorSpecificity">module parker.TopSelectorSpecificity</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.TopSelectorSpecificity.measure" id="apidoc.element.parker.TopSelectorSpecificity.measure">
+        function <span class="apidocSignatureSpan">parker.TopSelectorSpecificity.</span>measure
+        <span class="apidocSignatureSpan">(rawSelector)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">measure = function (rawSelector) {
+    var selector = new CssSelector(rawSelector),
+        identifiers = selector.getIdentifiers(),
+        specificity = 0;
+
+    _.each(identifiers, function (identifier) {
+        identifier = stripNotIdentifier(identifier);
+
+        var idIdentifiers = countIdIdentifiers(identifier),
+            classIdentifiers = countClassIdentifiers(identifier),
+            attributeIdentifiers = countAttributeIdentifiers(identifier),
+            pseudoClassIdentifiers = countPseudoClassIdentifiers(identifier),
+            typeIdentifiers = countTypeIdentifiers(identifier),
+            pseudoElementIdentifiers = countPseudoElementIdentifiers(identifier);
+
+        specificity += getSpecificity(idIdentifiers, classIdentifiers, attributeIdentifiers, pseudoClassIdentifiers, typeIdentifiers
+, pseudoElementIdentifiers);
+
+    }, this);
+
+    return specificity;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.TopSelectorSpecificitySelector" id="apidoc.module.parker.TopSelectorSpecificitySelector">module parker.TopSelectorSpecificitySelector</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.TopSelectorSpecificitySelector.iterator" id="apidoc.element.parker.TopSelectorSpecificitySelector.iterator">
+        function <span class="apidocSignatureSpan">parker.TopSelectorSpecificitySelector.</span>iterator
+        <span class="apidocSignatureSpan">(rawSelector)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">iterator = function (rawSelector) {
+    var selector = new CssSelector(rawSelector),
+        identifiers = selector.getIdentifiers(),
+        specificity = 0;
+
+    _.each(identifiers, function (identifier) {
+        var idIdentifiers = countIdIdentifiers(identifier),
+            classIdentifiers = countClassIdentifiers(identifier),
+            attributeIdentifiers = countAttributeIdentifiers(identifier),
+            pseudoClassIdentifiers = countPseudoClassIdentifiers(identifier),
+            typeIdentifiers = countTypeIdentifiers(identifier),
+            pseudoElementIdentifiers = countPseudoElementIdentifiers(identifier);
+
+        specificity += getSpecificity(idIdentifiers, classIdentifiers, attributeIdentifiers, pseudoClassIdentifiers, typeIdentifiers
+, pseudoElementIdentifiers);
+
+    }, this);
+
+    return specificity;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.TopSelectorSpecificitySelector.measure" id="apidoc.element.parker.TopSelectorSpecificitySelector.measure">
+        function <span class="apidocSignatureSpan">parker.TopSelectorSpecificitySelector.</span>measure
+        <span class="apidocSignatureSpan">(selector)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">measure = function (selector) {
+    return selector;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.TotalDeclarations" id="apidoc.module.parker.TotalDeclarations">module parker.TotalDeclarations</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.TotalDeclarations.measure" id="apidoc.element.parker.TotalDeclarations.measure">
+        function <span class="apidocSignatureSpan">parker.TotalDeclarations.</span>measure
+        <span class="apidocSignatureSpan">(declaration)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">measure = function (declaration) {
+    return 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.TotalIdSelectors" id="apidoc.module.parker.TotalIdSelectors">module parker.TotalIdSelectors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.TotalIdSelectors.measure" id="apidoc.element.parker.TotalIdSelectors.measure">
+        function <span class="apidocSignatureSpan">parker.TotalIdSelectors.</span>measure
+        <span class="apidocSignatureSpan">(selector)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">measure = function (selector) {
+		var ids = 0;
+		var inBrackets = false;
+
+		_.forOwn(selector, function (char) {
+			if (char === &#x27;[&#x27;) {
+				inBrackets = true;
+			} else if (char === &#x27;]&#x27;) {
+				inBrackets = false;
+			} else if (char === &#x27;#&#x27; &#x26;&#x26; !inBrackets) {
+				ids++;
+			}
+		});
+
+		return ids;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.TotalIdentifiers" id="apidoc.module.parker.TotalIdentifiers">module parker.TotalIdentifiers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.TotalIdentifiers.measure" id="apidoc.element.parker.TotalIdentifiers.measure">
+        function <span class="apidocSignatureSpan">parker.TotalIdentifiers.</span>measure
+        <span class="apidocSignatureSpan">(identifier)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">measure = function (identifier) {
+    return 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.TotalImportantKeywords" id="apidoc.module.parker.TotalImportantKeywords">module parker.TotalImportantKeywords</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.TotalImportantKeywords.measure" id="apidoc.element.parker.TotalImportantKeywords.measure">
+        function <span class="apidocSignatureSpan">parker.TotalImportantKeywords.</span>measure
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">measure = function (value) {
+    if (value.match(/!important/g))
+        return 1;
+    return 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.TotalMediaQueries" id="apidoc.module.parker.TotalMediaQueries">module parker.TotalMediaQueries</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.TotalMediaQueries.filter" id="apidoc.element.parker.TotalMediaQueries.filter">
+        function <span class="apidocSignatureSpan">parker.TotalMediaQueries.</span>filter
+        <span class="apidocSignatureSpan">(value, index, self)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filter = function (value, index, self) {
+    return self.indexOf(value) === index;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    console.error(&#x27;Unknown output format: %s&#x27;, argv.format);
+    console.error(&#x27;  available: &#x27; + Object.keys(formatters).join(&#x27; &#x27;));
+    process.exit(1);
+}
+});
+
+cliController.on(&#x27;showNumericOnly&#x27;, function () {
+metrics = _.<span class="apidocCodeKeywordSpan">filter</span>(metrics, function (metric) {
+    return metric.format == &#x27;number&#x27;;
+});
+});
+
+var readDirectory = function (directoryPath, onFileLoad, onAllLoad) {
+fs.readdir(directoryPath, function (err, files) {
+    async.each(files, function (file, fileDone) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.TotalMediaQueries.measure" id="apidoc.element.parker.TotalMediaQueries.measure">
+        function <span class="apidocSignatureSpan">parker.TotalMediaQueries.</span>measure
+        <span class="apidocSignatureSpan">(query)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">measure = function (query) {
+    return query;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.TotalRules" id="apidoc.module.parker.TotalRules">module parker.TotalRules</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.TotalRules.measure" id="apidoc.element.parker.TotalRules.measure">
+        function <span class="apidocSignatureSpan">parker.TotalRules.</span>measure
+        <span class="apidocSignatureSpan">(rule)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">measure = function (rule) {
+    return 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.TotalSelectors" id="apidoc.module.parker.TotalSelectors">module parker.TotalSelectors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.TotalSelectors.measure" id="apidoc.element.parker.TotalSelectors.measure">
+        function <span class="apidocSignatureSpan">parker.TotalSelectors.</span>measure
+        <span class="apidocSignatureSpan">(selector)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">measure = function (selector) {
+    return 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.TotalStylesheetSize" id="apidoc.module.parker.TotalStylesheetSize">module parker.TotalStylesheetSize</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.TotalStylesheetSize.measure" id="apidoc.element.parker.TotalStylesheetSize.measure">
+        function <span class="apidocSignatureSpan">parker.TotalStylesheetSize.</span>measure
+        <span class="apidocSignatureSpan">(stylesheet)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">measure = function (stylesheet) {
+    return byteCount(stylesheet);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.TotalStylesheets" id="apidoc.module.parker.TotalStylesheets">module parker.TotalStylesheets</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.TotalStylesheets.measure" id="apidoc.element.parker.TotalStylesheets.measure">
+        function <span class="apidocSignatureSpan">parker.TotalStylesheets.</span>measure
+        <span class="apidocSignatureSpan">(stylesheet)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">measure = function (stylesheet) {
+    return 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.TotalUniqueColours" id="apidoc.module.parker.TotalUniqueColours">module parker.TotalUniqueColours</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.TotalUniqueColours.filter" id="apidoc.element.parker.TotalUniqueColours.filter">
+        function <span class="apidocSignatureSpan">parker.TotalUniqueColours.</span>filter
+        <span class="apidocSignatureSpan">(value, index, self)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filter = function (value, index, self) {
+    return self.indexOf(value) === index;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    console.error(&#x27;Unknown output format: %s&#x27;, argv.format);
+    console.error(&#x27;  available: &#x27; + Object.keys(formatters).join(&#x27; &#x27;));
+    process.exit(1);
+}
+});
+
+cliController.on(&#x27;showNumericOnly&#x27;, function () {
+metrics = _.<span class="apidocCodeKeywordSpan">filter</span>(metrics, function (metric) {
+    return metric.format == &#x27;number&#x27;;
+});
+});
+
+var readDirectory = function (directoryPath, onFileLoad, onAllLoad) {
+fs.readdir(directoryPath, function (err, files) {
+    async.each(files, function (file, fileDone) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.TotalUniqueColours.measure" id="apidoc.element.parker.TotalUniqueColours.measure">
+        function <span class="apidocSignatureSpan">parker.TotalUniqueColours.</span>measure
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">measure = function (value) {
+    return getColourHexes(value).map(function (colourHex) {
+        return getLongHashForm(colourHex).toUpperCase();
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.UniqueColours" id="apidoc.module.parker.UniqueColours">module parker.UniqueColours</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.UniqueColours.filter" id="apidoc.element.parker.UniqueColours.filter">
+        function <span class="apidocSignatureSpan">parker.UniqueColours.</span>filter
+        <span class="apidocSignatureSpan">(value, index, self)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filter = function (value, index, self) {
+    return self.indexOf(value) === index;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    console.error(&#x27;Unknown output format: %s&#x27;, argv.format);
+    console.error(&#x27;  available: &#x27; + Object.keys(formatters).join(&#x27; &#x27;));
+    process.exit(1);
+}
+});
+
+cliController.on(&#x27;showNumericOnly&#x27;, function () {
+metrics = _.<span class="apidocCodeKeywordSpan">filter</span>(metrics, function (metric) {
+    return metric.format == &#x27;number&#x27;;
+});
+});
+
+var readDirectory = function (directoryPath, onFileLoad, onAllLoad) {
+fs.readdir(directoryPath, function (err, files) {
+    async.each(files, function (file, fileDone) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.UniqueColours.measure" id="apidoc.element.parker.UniqueColours.measure">
+        function <span class="apidocSignatureSpan">parker.UniqueColours.</span>measure
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">measure = function (value) {
+    return getColourHexes(value).map(function (colourHex) {
+        return getLongHashForm(colourHex).toUpperCase();
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
