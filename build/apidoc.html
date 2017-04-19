@@ -63,6 +63,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.parker.parker">
+            function <span class="apidocSignatureSpan"></span>parker
+            <span class="apidocSignatureSpan">(metrics)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.parker.CliController">
             function <span class="apidocSignatureSpan">parker.</span>CliController
             <span class="apidocSignatureSpan">()</span>
@@ -120,6 +129,15 @@
             <a class="apidocElementLiA" href="#apidoc.element.parker.CssStylesheet">
             function <span class="apidocSignatureSpan">parker.</span>CssStylesheet
             <span class="apidocSignatureSpan">(raw)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.Parker">
+            function <span class="apidocSignatureSpan">parker.</span>Parker
+            <span class="apidocSignatureSpan">(metrics)</span>
             </a>
 
         </li>
@@ -187,6 +205,12 @@
         <li>
 
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>MediaQueries</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parker.</span>Parker.prototype</span>
 
         </li>
 
@@ -670,6 +694,32 @@
         <li>
 
             <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">parker.MediaQueries.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.Parker">module parker.Parker</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.Parker.Parker">
+            function <span class="apidocSignatureSpan">parker.</span>Parker
+            <span class="apidocSignatureSpan">(metrics)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parker.Parker.prototype">module parker.Parker.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parker.Parker.prototype.run">
+            function <span class="apidocSignatureSpan">parker.Parker.prototype.</span>run
+            <span class="apidocSignatureSpan">()</span>
+            </a>
 
         </li>
 
@@ -1363,6 +1413,21 @@
 
 
     <h2>
+        <a href="#apidoc.element.parker.parker" id="apidoc.element.parker.parker">
+        function <span class="apidocSignatureSpan"></span>parker
+        <span class="apidocSignatureSpan">(metrics)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Parker(metrics) {
+    this.metrics = metrics;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
         <a href="#apidoc.element.parker.CliController" id="apidoc.element.parker.CliController">
         function <span class="apidocSignatureSpan">parker.</span>CliController
         <span class="apidocSignatureSpan">()</span>
@@ -1466,6 +1531,23 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parker.Parker" id="apidoc.element.parker.Parker">
+        function <span class="apidocSignatureSpan">parker.</span>Parker
+        <span class="apidocSignatureSpan">(metrics)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Parker(metrics) {
+    this.metrics = metrics;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
 
 
 
@@ -2302,6 +2384,74 @@ fs.readdir(directoryPath, function (err, files) {
 
 
 
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.Parker" id="apidoc.module.parker.Parker">module parker.Parker</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.Parker.Parker" id="apidoc.element.parker.Parker.Parker">
+        function <span class="apidocSignatureSpan">parker.</span>Parker
+        <span class="apidocSignatureSpan">(metrics)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Parker(metrics) {
+    this.metrics = metrics;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parker.Parker.prototype" id="apidoc.module.parker.Parker.prototype">module parker.Parker.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parker.Parker.prototype.run" id="apidoc.element.parker.Parker.prototype.run">
+        function <span class="apidocSignatureSpan">parker.Parker.prototype.</span>run
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function () {
+    var args = arguments;
+
+    if (arguments.length === 1 &#x26;&#x26; _.isArray(arguments[0])) {
+        args = arguments[0];
+    }
+
+    args = _.filter(args, function (argument) {return _.isString(argument); });
+    var metrics = _.filter(this.metrics, function (metric) {return metric.type.match(VALID_METRIC_TYPE); });
+
+    if (args.length &#x3e; 0) {
+        return runMetrics(metrics, args);
+    }
+
+    throw {&#x27;message&#x27;: &#x27;No valid stylesheet data supplied&#x27;, &#x27;name&#x27;: &#x27;DataTypeException&#x27;};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var Parker = require(&#x27;parker/lib/Parker&#x27;);
+var metrics = require(&#x27;parker/metrics/All&#x27;); // Or an array of the metrics you want to measure
+
+var file = fs.readFile(&#x27;test.css&#x27;, function (err, data) {
+	if (err) throw err;
+
+	var parker = new Parker(metrics);
+	var results = parker.<span class="apidocCodeKeywordSpan">run</span>(data.toString());
+
+	// Do something with results
+});
+```
+
+## Documentation
+...</pre></li>
+    </ul>
 
 
 </div>
