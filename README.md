@@ -1,6 +1,6 @@
 # npmdoc-parker
 
-#### api documentation for  [parker (v0.0.10)](https://github.com/katiefenn/parker)  [![npm package](https://img.shields.io/npm/v/npmdoc-parker.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-parker) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-parker.svg)](https://travis-ci.org/npmdoc/node-npmdoc-parker)
+#### basic api documentation for  [parker (v0.0.10)](https://github.com/katiefenn/parker)  [![npm package](https://img.shields.io/npm/v/npmdoc-parker.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-parker) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-parker.svg)](https://travis-ci.org/npmdoc/node-npmdoc-parker)
 
 #### Stylesheet analysis tool for CSS
 
