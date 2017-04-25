@@ -1769,7 +1769,24 @@ if (module.parent) {
 
     return this.raw.split(':')[0].trim();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            });
+        });
+
+        _.each(rule.getDeclarations(), function (rawDeclaration) {
+            var declaration = new CssDeclaration(rawDeclaration);
+
+            readings.push(runMetricsOnNode(metrics, rawDeclaration, 'declaration'));
+            readings.push(runMetricsOnNode(metrics, declaration.<span class="apidocCodeKeywordSpan">getProperty</span>(), '
+property'));
+            readings.push(runMetricsOnNode(metrics, declaration.getValue(), 'value'));
+        });
+    });
+});
+
+var data = readings.reduce(mergeArrayAttributes);
+data = aggregateData(data, metrics);
+...</pre></li>
     </ul>
 
 
@@ -1788,7 +1805,23 @@ if (module.parent) {
 
     return this.raw.split(':')[1].trim();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        });
+
+        _.each(rule.getDeclarations(), function (rawDeclaration) {
+            var declaration = new CssDeclaration(rawDeclaration);
+
+            readings.push(runMetricsOnNode(metrics, rawDeclaration, 'declaration'));
+            readings.push(runMetricsOnNode(metrics, declaration.getProperty(), 'property'));
+            readings.push(runMetricsOnNode(metrics, declaration.<span class="apidocCodeKeywordSpan">getValue</span>(), 'value
+'));
+        });
+    });
+});
+
+var data = readings.reduce(mergeArrayAttributes);
+data = aggregateData(data, metrics);
+...</pre></li>
     </ul>
 
 
@@ -1831,7 +1864,23 @@ if (module.parent) {
 
 	return queries.split(/ or |,/g).map(trimQuery);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+readings.push(runMetricsOnNode(metrics, rawStylesheet, 'stylesheet'));
+
+var stylesheet = new CssStylesheet(rawStylesheet),
+    rules = stylesheet.getRules() || [];
+
+_.each(stylesheet.getMediaQueries(), function (rawMediaQuery) {
+    var mediaQuery = new CssMediaQuery(rawMediaQuery);
+    _.each(mediaQuery.<span class="apidocCodeKeywordSpan">getQueries</span>(), function (query) {
+        readings.push(runMetricsOnNode(metrics, query, 'mediaquery'));
+    });
+
+    rules = rules.concat(mediaQuery.getRules());
+});
+
+_.each(rules, function (rawRule) {
+...</pre></li>
     </ul>
 
 
@@ -1866,7 +1915,22 @@ if (module.parent) {
     }
     return rules;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var runMetrics = function (metrics, stylesheets) {
+    var readings = [];
+
+    _.each(stylesheets, function (rawStylesheet) {
+readings.push(runMetricsOnNode(metrics, rawStylesheet, 'stylesheet'));
+
+var stylesheet = new CssStylesheet(rawStylesheet),
+    rules = stylesheet.<span class="apidocCodeKeywordSpan">getRules</span>() || [];
+
+_.each(stylesheet.getMediaQueries(), function (rawMediaQuery) {
+    var mediaQuery = new CssMediaQuery(rawMediaQuery);
+    _.each(mediaQuery.getQueries(), function (query) {
+        readings.push(runMetricsOnNode(metrics, query, 'mediaquery'));
+    });
+...</pre></li>
     </ul>
 
 
@@ -1906,7 +1970,23 @@ if (module.parent) {
     <li>description and source-code<pre class="apidocCodePre">getDeclarations = function () {
     return getDeclarations(getDeclarationBlock(this.raw));
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        readings.push(runMetricsOnNode(metrics, rawSelector, 'selector'));
+
+        _.each(selector.getIdentifiers(), function (rawIdentifier) {
+            readings.push(runMetricsOnNode(metrics, rawIdentifier, 'identifier'));
+        });
+    });
+
+    _.each(rule.<span class="apidocCodeKeywordSpan">getDeclarations</span>(), function (rawDeclaration) {
+        var declaration = new CssDeclaration(rawDeclaration);
+
+        readings.push(runMetricsOnNode(metrics, rawDeclaration, 'declaration'));
+        readings.push(runMetricsOnNode(metrics, declaration.getProperty(), 'property'));
+        readings.push(runMetricsOnNode(metrics, declaration.getValue(), 'value'));
+    });
+});
+...</pre></li>
     </ul>
 
 
@@ -1921,7 +2001,23 @@ if (module.parent) {
     <li>description and source-code<pre class="apidocCodePre">getSelectors = function () {
     return getSelectors(getSelectorBlock(this.raw));
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+rules = rules.concat(mediaQuery.getRules());
+        });
+
+        _.each(rules, function (rawRule) {
+readings.push(runMetricsOnNode(metrics, rawRule, 'rule'));
+
+var rule = new CssRule(rawRule);
+_.each(rule.<span class="apidocCodeKeywordSpan">getSelectors</span>(), function (rawSelector) {
+    var selector = new CssSelector(rawSelector);
+    readings.push(runMetricsOnNode(metrics, rawSelector, 'selector'));
+
+    _.each(selector.getIdentifiers(), function (rawIdentifier) {
+        readings.push(runMetricsOnNode(metrics, rawIdentifier, 'identifier'));
+    });
+});
+...</pre></li>
     </ul>
 
 
@@ -2020,20 +2116,20 @@ switch(character) {
     return _.without(this.identifiers, ' ', '', '[]');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-    type: 'selector',
-    aggregate: 'mean',
-    format: 'number',
-    measure: function (rawSelector) {
-var totalSpecificity = 0,
-    selector = new CssSelector(rawSelector);
+readings.push(runMetricsOnNode(metrics, rawRule, 'rule'));
 
-_.each(selector.<span class="apidocCodeKeywordSpan">getIdentifiers</span>(), function (identifier) {
-    var idIdentifiers = countIdIdentifiers(identifier),
-        classIdentifiers = countClassIdentifiers(identifier),
-        attributeIdentifiers = countAttributeIdentifiers(identifier),
-        pseudoClassIdentifiers = countPseudoClassIdentifiers(identifier),
-        typeIdentifiers = countTypeIdentifiers(identifier),
-        pseudoElementIdentifiers = countPseudoElementIdentifiers(identifier);
+var rule = new CssRule(rawRule);
+_.each(rule.getSelectors(), function (rawSelector) {
+    var selector = new CssSelector(rawSelector);
+    readings.push(runMetricsOnNode(metrics, rawSelector, 'selector'));
+
+    _.each(selector.<span class="apidocCodeKeywordSpan">getIdentifiers</span>(), function (rawIdentifier) {
+        readings.push(runMetricsOnNode(metrics, rawIdentifier, 'identifier'));
+    });
+});
+
+_.each(rule.getDeclarations(), function (rawDeclaration) {
+    var declaration = new CssDeclaration(rawDeclaration);
 ...</pre></li>
     </ul>
 
@@ -2078,7 +2174,23 @@ _.each(selector.<span class="apidocCodeKeywordSpan">getIdentifiers</span>(), fun
         return isMalformedStatement(child);
     });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    expect(cssStylesheet.getRules()[0]).to.equal("body {border: 0;}");
+    expect(cssStylesheet.getRules()[1]).to.equal("a{color: #fff;}");
+});
+
+it('should return an array of malformed statements for a string containing malformed statements', function () {
+    var cssStylesheet = new CssStylesheet('body {border: 0;} h1; h2 {font-weight: bold;}');
+    expect(cssStylesheet.getRules()).to.be.an('array');
+    expect(cssStylesheet.<span class="apidocCodeKeywordSpan">getMalformedStatements</span>()[0]).to.equal('h1;');
+});
+
+it('should identify a rule with an unexpected colon as a malformed statement', function () {
+    var cssStylesheet = new CssStylesheet('body {border: 0;} h1;{font-weight: bold;}');
+    expect(cssStylesheet.getRules()).to.be.an('array');
+    expect(cssStylesheet.getMalformedStatements()[0]).to.equal('h1;');
+    expect(cssStylesheet.getMalformedStatements()[1]).to.equal('{font-weight: bold;}');
+...</pre></li>
     </ul>
 
 
@@ -2096,7 +2208,23 @@ _.each(selector.<span class="apidocCodeKeywordSpan">getIdentifiers</span>(), fun
         return isMediaQuery(child);
     });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    _.each(stylesheets, function (rawStylesheet) {
+readings.push(runMetricsOnNode(metrics, rawStylesheet, 'stylesheet'));
+
+var stylesheet = new CssStylesheet(rawStylesheet),
+    rules = stylesheet.getRules() || [];
+
+_.each(stylesheet.<span class="apidocCodeKeywordSpan">getMediaQueries</span>(), function (rawMediaQuery) {
+    var mediaQuery = new CssMediaQuery(rawMediaQuery);
+    _.each(mediaQuery.getQueries(), function (query) {
+        readings.push(runMetricsOnNode(metrics, query, 'mediaquery'));
+    });
+
+    rules = rules.concat(mediaQuery.getRules());
+});
+...</pre></li>
     </ul>
 
 
@@ -2115,7 +2243,22 @@ _.each(selector.<span class="apidocCodeKeywordSpan">getIdentifiers</span>(), fun
         return isRule(child);
     });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var runMetrics = function (metrics, stylesheets) {
+    var readings = [];
+
+    _.each(stylesheets, function (rawStylesheet) {
+readings.push(runMetricsOnNode(metrics, rawStylesheet, 'stylesheet'));
+
+var stylesheet = new CssStylesheet(rawStylesheet),
+    rules = stylesheet.<span class="apidocCodeKeywordSpan">getRules</span>() || [];
+
+_.each(stylesheet.getMediaQueries(), function (rawMediaQuery) {
+    var mediaQuery = new CssMediaQuery(rawMediaQuery);
+    _.each(mediaQuery.getQueries(), function (query) {
+        readings.push(runMetricsOnNode(metrics, query, 'mediaquery'));
+    });
+...</pre></li>
     </ul>
 
 
@@ -2206,7 +2349,22 @@ _.each(selector.<span class="apidocCodeKeywordSpan">getIdentifiers</span>(), fun
 
     return identifiers.length;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return data;
+};
+
+var runMetricsOnNode = function (metrics, node, type) {
+var data = {};
+_.each(filterMetricsByType(metrics, type), function (metric) {
+    var measurement = metric.<span class="apidocCodeKeywordSpan">measure</span>(node);
+    if (!_.isArray(measurement)) {
+        measurement = [measurement];
+    }
+
+    data[metric.id] = measurement;
+});
+...</pre></li>
     </ul>
 
 
@@ -2365,7 +2523,22 @@ fs.readdir(directoryPath, function (err, files) {
     <li>description and source-code<pre class="apidocCodePre">measure = function (query) {
     return query;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return data;
+};
+
+var runMetricsOnNode = function (metrics, node, type) {
+var data = {};
+_.each(filterMetricsByType(metrics, type), function (metric) {
+    var measurement = metric.<span class="apidocCodeKeywordSpan">measure</span>(node);
+    if (!_.isArray(measurement)) {
+        measurement = [measurement];
+    }
+
+    data[metric.id] = measurement;
+});
+...</pre></li>
     </ul>
 
 
@@ -2429,20 +2602,21 @@ fs.readdir(directoryPath, function (err, files) {
     throw {'message': 'No valid stylesheet data supplied', 'name': 'DataTypeException'};
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var Parker = require('parker/lib/Parker');
-var metrics = require('parker/metrics/All'); // Or an array of the metrics you want to measure
+};
 
-var file = fs.readFile('test.css', function (err, data) {
-	if (err) throw err;
+var fileIsStylesheet = function (filePath) {
+return filePath.indexOf('.css') !== -1;
+};
 
-	var parker = new Parker(metrics);
-	var results = parker.<span class="apidocCodeKeywordSpan">run</span>(data.toString());
+var runReport = function (stylesheets, metrics) {
+var results = parker.<span class="apidocCodeKeywordSpan">run</span>(stylesheets);
+console.log(formatter(metrics, results));
+};
 
-	// Do something with results
-});
-```
-
-## Documentation
+if (module.parent) {
+module.exports = Parker;
+} else {
+var parker = new Parker(metrics),
 ...</pre></li>
     </ul>
 
@@ -2463,7 +2637,22 @@ var file = fs.readFile('test.css', function (err, data) {
     <li>description and source-code<pre class="apidocCodePre">measure = function (rule) {
     return getSelectors(getSelectorBlock(rule)).length;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return data;
+};
+
+var runMetricsOnNode = function (metrics, node, type) {
+var data = {};
+_.each(filterMetricsByType(metrics, type), function (metric) {
+    var measurement = metric.<span class="apidocCodeKeywordSpan">measure</span>(node);
+    if (!_.isArray(measurement)) {
+        measurement = [measurement];
+    }
+
+    data[metric.id] = measurement;
+});
+...</pre></li>
     </ul>
 
 
@@ -2510,7 +2699,22 @@ var file = fs.readFile('test.css', function (err, data) {
 
     return totalSpecificity;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return data;
+};
+
+var runMetricsOnNode = function (metrics, node, type) {
+var data = {};
+_.each(filterMetricsByType(metrics, type), function (metric) {
+    var measurement = metric.<span class="apidocCodeKeywordSpan">measure</span>(node);
+    if (!_.isArray(measurement)) {
+        measurement = [measurement];
+    }
+
+    data[metric.id] = measurement;
+});
+...</pre></li>
     </ul>
 
 
@@ -2559,7 +2763,22 @@ var file = fs.readFile('test.css', function (err, data) {
 
     return specificity;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return data;
+};
+
+var runMetricsOnNode = function (metrics, node, type) {
+var data = {};
+_.each(filterMetricsByType(metrics, type), function (metric) {
+    var measurement = metric.<span class="apidocCodeKeywordSpan">measure</span>(node);
+    if (!_.isArray(measurement)) {
+        measurement = [measurement];
+    }
+
+    data[metric.id] = measurement;
+});
+...</pre></li>
     </ul>
 
 
@@ -2606,7 +2825,26 @@ var file = fs.readFile('test.css', function (err, data) {
 
     return specificity;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	filter: function (value, index, list) {
+	        return self.indexOf(value) === index;
+	}
+	};
+
+&lt;a name="iterator"&gt;&lt;/a&gt;
+#### iterator
+	metric.<span class="apidocCodeKeywordSpan">iterator</span>(element)
+A helper method of "max" aggregated metrics that returns a number value for the given element. Used to determine which
+ item should be selected as the maximum value when the measurement returned by the measurement method is not a number value. When
+ the method is not defined, the measurement returned by "measure" is used instead.
+
+Example:
+The Top Selector Specificity Selector metric returns the most specific selector, but does not report a number value. An iterator
+ method is used to determine the selector's specificity when results are aggregated.
+
+	module.exports = {
+	id: 'top-selector-specificity-selector',
+...</pre></li>
     </ul>
 
 
@@ -2621,7 +2859,22 @@ var file = fs.readFile('test.css', function (err, data) {
     <li>description and source-code<pre class="apidocCodePre">measure = function (selector) {
     return selector;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return data;
+};
+
+var runMetricsOnNode = function (metrics, node, type) {
+var data = {};
+_.each(filterMetricsByType(metrics, type), function (metric) {
+    var measurement = metric.<span class="apidocCodeKeywordSpan">measure</span>(node);
+    if (!_.isArray(measurement)) {
+        measurement = [measurement];
+    }
+
+    data[metric.id] = measurement;
+});
+...</pre></li>
     </ul>
 
 
@@ -2651,7 +2904,22 @@ var file = fs.readFile('test.css', function (err, data) {
     <li>description and source-code<pre class="apidocCodePre">measure = function (declaration) {
     return 1;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return data;
+};
+
+var runMetricsOnNode = function (metrics, node, type) {
+var data = {};
+_.each(filterMetricsByType(metrics, type), function (metric) {
+    var measurement = metric.<span class="apidocCodeKeywordSpan">measure</span>(node);
+    if (!_.isArray(measurement)) {
+        measurement = [measurement];
+    }
+
+    data[metric.id] = measurement;
+});
+...</pre></li>
     </ul>
 
 
@@ -2694,7 +2962,22 @@ var file = fs.readFile('test.css', function (err, data) {
 
 		return ids;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return data;
+};
+
+var runMetricsOnNode = function (metrics, node, type) {
+var data = {};
+_.each(filterMetricsByType(metrics, type), function (metric) {
+    var measurement = metric.<span class="apidocCodeKeywordSpan">measure</span>(node);
+    if (!_.isArray(measurement)) {
+        measurement = [measurement];
+    }
+
+    data[metric.id] = measurement;
+});
+...</pre></li>
     </ul>
 
 
@@ -2724,7 +3007,22 @@ var file = fs.readFile('test.css', function (err, data) {
     <li>description and source-code<pre class="apidocCodePre">measure = function (identifier) {
     return 1;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return data;
+};
+
+var runMetricsOnNode = function (metrics, node, type) {
+var data = {};
+_.each(filterMetricsByType(metrics, type), function (metric) {
+    var measurement = metric.<span class="apidocCodeKeywordSpan">measure</span>(node);
+    if (!_.isArray(measurement)) {
+        measurement = [measurement];
+    }
+
+    data[metric.id] = measurement;
+});
+...</pre></li>
     </ul>
 
 
@@ -2756,7 +3054,22 @@ var file = fs.readFile('test.css', function (err, data) {
         return 1;
     return 0;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return data;
+};
+
+var runMetricsOnNode = function (metrics, node, type) {
+var data = {};
+_.each(filterMetricsByType(metrics, type), function (metric) {
+    var measurement = metric.<span class="apidocCodeKeywordSpan">measure</span>(node);
+    if (!_.isArray(measurement)) {
+        measurement = [measurement];
+    }
+
+    data[metric.id] = measurement;
+});
+...</pre></li>
     </ul>
 
 
@@ -2817,7 +3130,22 @@ fs.readdir(directoryPath, function (err, files) {
     <li>description and source-code<pre class="apidocCodePre">measure = function (query) {
     return query;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return data;
+};
+
+var runMetricsOnNode = function (metrics, node, type) {
+var data = {};
+_.each(filterMetricsByType(metrics, type), function (metric) {
+    var measurement = metric.<span class="apidocCodeKeywordSpan">measure</span>(node);
+    if (!_.isArray(measurement)) {
+        measurement = [measurement];
+    }
+
+    data[metric.id] = measurement;
+});
+...</pre></li>
     </ul>
 
 
@@ -2847,7 +3175,22 @@ fs.readdir(directoryPath, function (err, files) {
     <li>description and source-code<pre class="apidocCodePre">measure = function (rule) {
     return 1;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return data;
+};
+
+var runMetricsOnNode = function (metrics, node, type) {
+var data = {};
+_.each(filterMetricsByType(metrics, type), function (metric) {
+    var measurement = metric.<span class="apidocCodeKeywordSpan">measure</span>(node);
+    if (!_.isArray(measurement)) {
+        measurement = [measurement];
+    }
+
+    data[metric.id] = measurement;
+});
+...</pre></li>
     </ul>
 
 
@@ -2877,7 +3220,22 @@ fs.readdir(directoryPath, function (err, files) {
     <li>description and source-code<pre class="apidocCodePre">measure = function (selector) {
     return 1;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return data;
+};
+
+var runMetricsOnNode = function (metrics, node, type) {
+var data = {};
+_.each(filterMetricsByType(metrics, type), function (metric) {
+    var measurement = metric.<span class="apidocCodeKeywordSpan">measure</span>(node);
+    if (!_.isArray(measurement)) {
+        measurement = [measurement];
+    }
+
+    data[metric.id] = measurement;
+});
+...</pre></li>
     </ul>
 
 
@@ -2907,7 +3265,22 @@ fs.readdir(directoryPath, function (err, files) {
     <li>description and source-code<pre class="apidocCodePre">measure = function (stylesheet) {
     return byteCount(stylesheet);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return data;
+};
+
+var runMetricsOnNode = function (metrics, node, type) {
+var data = {};
+_.each(filterMetricsByType(metrics, type), function (metric) {
+    var measurement = metric.<span class="apidocCodeKeywordSpan">measure</span>(node);
+    if (!_.isArray(measurement)) {
+        measurement = [measurement];
+    }
+
+    data[metric.id] = measurement;
+});
+...</pre></li>
     </ul>
 
 
@@ -2937,7 +3310,22 @@ fs.readdir(directoryPath, function (err, files) {
     <li>description and source-code<pre class="apidocCodePre">measure = function (stylesheet) {
     return 1;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return data;
+};
+
+var runMetricsOnNode = function (metrics, node, type) {
+var data = {};
+_.each(filterMetricsByType(metrics, type), function (metric) {
+    var measurement = metric.<span class="apidocCodeKeywordSpan">measure</span>(node);
+    if (!_.isArray(measurement)) {
+        measurement = [measurement];
+    }
+
+    data[metric.id] = measurement;
+});
+...</pre></li>
     </ul>
 
 
@@ -3000,7 +3388,22 @@ fs.readdir(directoryPath, function (err, files) {
         return getLongHashForm(colourHex).toUpperCase();
     });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return data;
+};
+
+var runMetricsOnNode = function (metrics, node, type) {
+var data = {};
+_.each(filterMetricsByType(metrics, type), function (metric) {
+    var measurement = metric.<span class="apidocCodeKeywordSpan">measure</span>(node);
+    if (!_.isArray(measurement)) {
+        measurement = [measurement];
+    }
+
+    data[metric.id] = measurement;
+});
+...</pre></li>
     </ul>
 
 
@@ -3063,7 +3466,22 @@ fs.readdir(directoryPath, function (err, files) {
         return getLongHashForm(colourHex).toUpperCase();
     });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return data;
+};
+
+var runMetricsOnNode = function (metrics, node, type) {
+var data = {};
+_.each(filterMetricsByType(metrics, type), function (metric) {
+    var measurement = metric.<span class="apidocCodeKeywordSpan">measure</span>(node);
+    if (!_.isArray(measurement)) {
+        measurement = [measurement];
+    }
+
+    data[metric.id] = measurement;
+});
+...</pre></li>
     </ul>
 
 
